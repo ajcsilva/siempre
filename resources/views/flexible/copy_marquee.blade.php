@@ -7,33 +7,31 @@
 >
   <div class="overflow-hidden py-2">
     <ul
-      class="marquee inline-flex max-w-full space-x-4 whitespace-nowrap py-3"
+      class="marquee inline-flex max-w-full space-x-4 whitespace-nowrap py-3 text-sm font-bold sm:text-base md:text-lg"
       x-data="marquee({ speed: 0.33, spaceX: 4 })"
     >
-      <li class="underline">Element 1</li>
-      <li>Element 2</li>
-      <li>Absolutely Huge Element 3</li>
-      <li>Element 4</li>
-      <li>Element 5</li>
+      @foreach (get_sub_field('top_marquee') as $item)
+        <li>{{ $item['item'] }}</li>
+      @endforeach
     </ul>
   </div>
 
-  <div class="flex flex-1 items-center">
+  <div class="flex flex-1 items-center py-8">
     <div class="container">
       @if (have_rows('body'))
         @while (have_rows('body'))
           @php the_row() @endphp
           @if (get_row_layout() == 'copy')
             <div @class([
-                'prose-xl text-[#1e1e1e] font-bold leading-normal',
+                'prose max-w-none text-[#1e1e1e] font-bold leading-tight px-4 mx-auto sm:leading-normal sm:prose-xl',
                 '[&_p]:mx-auto [&_p]:max-w-3xl [&_p]:uppercase [&_p]:tracking-wider',
                 '[&_a]:text-indigo-500 [&_strong]:text-white',
-                '[&_img]:mx-auto',
+                '[&_img]:mx-auto [&_img]:w-full [&_img]:max-w-5xl',
             ])>
               {!! get_sub_field('copy') !!}
             </div>
           @elseif(get_row_layout() == 'copy_column')
-            <div class="mt-6 flex justify-center gap-8">
+            <div class="mt-6 flex flex-wrap justify-center md:gap-8">
               @foreach (get_sub_field('copy_column') as $column)
                 <div
                   class="relative w-full max-w-[20rem] rounded p-4 pl-12 text-sm font-medium leading-tight tracking-wide text-[#1e1e1e]"
@@ -66,8 +64,14 @@
     </div>
   </div>
 
-  <div class="text-sm font-medium uppercase leading-none tracking-wide">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut praesentium accusantium quod nobis, quibusdam
-    perspiciatis soluta ipsam fuga
+  <div class="overflow-hidden py-2">
+    <ul
+      class="marquee inline-flex max-w-full space-x-4 whitespace-nowrap py-3 text-sm font-bold sm:text-base md:text-lg"
+      x-data="marquee({ speed: 0.33, spaceX: 4 })"
+    >
+      @foreach (get_sub_field('bottom_marquee') as $item)
+        <li>{{ $item['item'] }}</li>
+      @endforeach
+    </ul>
   </div>
 </section>
