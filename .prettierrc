@@ -1,0 +1,17 @@
+{
+  "singleQuote": true,
+  "braceStyle": "1tbs",
+  "plugins": ["@prettier/plugin-php", "@shufo/prettier-plugin-blade"],
+  "overrides": [
+    {
+      "files": ["*.blade.php"],
+      "options": {
+        "parser": "blade",
+        "tabWidth": 2,
+        "sortHtmlAttributes": "code-guide",
+        "sortTailwindcssClasses": true,
+        "wrapAttributes": "force-expand-multiline"
+      }
+    }
+  ]
+}

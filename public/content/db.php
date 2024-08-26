@@ -1,0 +1,1 @@
+/Users/ajcsilva/Herd/siempre/public/content/plugins/query-monitor/wp-content/db.php

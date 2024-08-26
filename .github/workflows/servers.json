@@ -1,0 +1,15 @@
+{
+  "main": [
+    {
+      "name": "siempre-1",
+      "ip": "35.236.52.109",
+      "username": "siempre",
+      "port": "31592",
+      "beforeHooks": "",
+      "afterHooks": "cd public/current; wp acorn optimize:clear",
+      "path": "/www/siempre_810/public",
+      "env": "WP_ENV"
+    }
+  ],
+  "staging": []
+}

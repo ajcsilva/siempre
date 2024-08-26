@@ -1,0 +1,33 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.has-text-align-center {
+  @apply text-center;
+}
+
+.has-text-align-right {
+  @apply text-right;
+}
+
+.has-text-align-left {
+  @apply text-left;
+}
+
+.marquee {
+  animation: scrolling var(--marquee-time) linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-1 * var(--marquee-width)));
+  }
+}
