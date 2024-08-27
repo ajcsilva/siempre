@@ -4,7 +4,7 @@
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
     "This file is @generated automatically"
   ],
-  "content-hash": "9045c6ca6b2d2fb511f2a9aee868163a",
+  "content-hash": "33090d3a83f1857975283ba1b3098a71",
   "packages": [
     {
       "name": "blade-ui-kit/blade-heroicons",
@@ -2692,6 +2692,15 @@
         }
       ],
       "time": "2024-07-08T13:16:43+00:00"
+    },
+    {
+      "name": "kinsta/kinsta-mu-plugins",
+      "version": "2.3.7",
+      "dist": {
+        "type": "zip",
+        "url": "https://kinsta.com/kinsta-tools/kinsta-mu-plugins.zip"
+      },
+      "type": "wordpress-muplugin"
     },
     {
       "name": "laravel/prompts",
