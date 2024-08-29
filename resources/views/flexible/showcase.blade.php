@@ -30,11 +30,9 @@
         </div>
       </div>
       <div class="order-1 md:order-2">
-        <img
-          class="aspect-square w-full"
-          src="https://placehold.co/600x600"
-          alt=""
-        >
+        @if (get_sub_field('image'))
+          {!! wp_get_attachment_image(get_sub_field('image')['ID'], 'large', false, ['class' => 'block']) !!}
+        @endif
       </div>
     </div>
   </div>
