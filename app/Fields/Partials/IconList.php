@@ -21,6 +21,14 @@ class IconList extends Partial {
         'envelope' => 'Envelope',
         'link' => 'Link',
         'heroicon-m-face-smile' => 'Happy Face',
+        'checkmark' => 'Checkmark',
+        'add' => 'Add',
+        'thumbs-up' => 'Thumbs Up',
+        'privacy' => 'Privacy',
+        'verified' => 'Verified',
+        'data-sourcing' => 'Data Sourcing',
+        'development' => 'Development',
+        'wordpress' => 'WordPress',
       ],
     ]);
 

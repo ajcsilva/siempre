@@ -24,6 +24,12 @@ class AssetsServiceProvider extends ServiceProvider {
         bundle('app')->enqueue();
 
         remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+        wp_enqueue_style(
+          'typekit',
+          'https://use.typekit.net/wsy2vmd.css',
+          false,
+          null,
+        );
       },
       100,
     );

@@ -2,7 +2,8 @@
 
 namespace App\Fields;
 
-use App\Fields\Partials\CopyMarquee;
+use App\Fields\Partials\FlexibleContent;
+use App\Fields\Partials\Hero;
 use Log1x\AcfComposer\Builder;
 use Log1x\AcfComposer\Field;
 
@@ -18,12 +19,8 @@ class Page extends Field {
     // prettier-ignore
     $fields
       ->addTab('General')
-        ->addFlexibleContent('hero', [
-          'min' => 1,
-          'max' => 1,
-        ])
-          ->addLayout(CopyMarquee::class)
-        ->endFlexibleContent()
+        ->addPartial(Hero::class)
+        ->addPartial(FlexibleContent::class)
       ->addTab('Advanced')
         ->addSelect('layout', [
           'choices' => [

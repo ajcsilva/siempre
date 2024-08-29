@@ -1,0 +1,33 @@
+[type='text'],
+input:where(:not([type])),
+[type='email'],
+[type='url'],
+[type='password'],
+[type='number'],
+[type='date'],
+[type='datetime-local'],
+[type='month'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='week'],
+[type='range'],
+[multiple],
+textarea,
+select {
+  @apply border-0 border-b-2 border-black text-lg;
+  @apply focus:outline-none focus:ring-0 focus:border-blue-500;
+}
+
+.gfield_label {
+  @apply sr-only;
+}
+
+.gform_footer {
+  @apply mt-4;
+}
+
+.gform_footer input[type='submit'] {
+  @apply text-blue-100 bg-blue-800 rounded-lg px-4 py-2 text-xl font-bold tracking-wide;
+  @apply focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-blue-500 hover:cursor-pointer;
+}

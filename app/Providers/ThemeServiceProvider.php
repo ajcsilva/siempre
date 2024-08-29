@@ -63,6 +63,11 @@ class ThemeServiceProvider extends SageServiceProvider {
     add_action('init', function () {
       remove_post_type_support('page', 'editor');
     });
+
+    /**
+     * Disables Gravity Forms default theme.
+     */
+    add_filter('gform_disable_form_theme_css', '__return_true');
   }
 
   /**
