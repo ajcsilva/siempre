@@ -15,6 +15,7 @@ auth.json
 public/wp
 public/.htaccess
 !public/content/plugins/acf-extended-pro
+!public/content/plugins/gravityforms
 
 # Logs
 *.log
