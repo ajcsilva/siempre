@@ -32,3 +32,9 @@
     transform: translateX(calc(-1 * var(--marquee-width)));
   }
 }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}

@@ -1,4 +1,5 @@
 import alpine from 'alpinejs';
+import gsap from 'gsap';
 
 /**
  * See https://stackoverflow.com/a/24004942/11784757
@@ -95,12 +96,8 @@ document.addEventListener('alpine:init', () => {
         // Reset to original number of elements
         this.$el.innerHTML = this.originalElement.innerHTML;
 
-        // Keep cloning elements until marquee starts to overflow
         let i = 0;
-        console.log(this.$el);
-        // console.log(`parent: ${this.$el.parentElement.offsetWidth}`);
-        // console.log(`element: ${this.$el.offsetWidth}`);
-
+        // Keep cloning elements until marquee starts to overflow
         while (this.$el.scrollWidth <= this.$el.clientWidth) {
           if (this.dynamicWidthElements) {
             // If we don't give this.$el time to recalculate its dimensions
@@ -117,8 +114,6 @@ document.addEventListener('alpine:init', () => {
           }
           i += 1;
           i = i % this.originalElement.childElementCount;
-          console.log(`this.$el.scrollWidth: ${this.$el.scrollWidth}`);
-          console.log(`this.$el.clientWidth: ${this.$el.clientWidth}`);
         }
 
         // Add another (original element count) of clones so the animation
@@ -136,6 +131,21 @@ document.addEventListener('alpine:init', () => {
     }),
   );
 });
+
+const paths = Array.from(
+  document.querySelectorAll('#siempre-logo path:not(defs path)'),
+);
+const dot = document.querySelector('#siempre-logo #dot');
+
+dot.style.opacity = 0;
+paths.forEach((el) => {
+  el.style.strokeDasharray = el.style.strokeDashoffset = el.getTotalLength();
+});
+
+const tl = gsap.timeline();
+tl.to(paths[0], 0.8, { strokeDashoffset: 0 });
+tl.to(paths[1], 2, { strokeDashoffset: 0 });
+tl.to(dot, 2, { opacity: 1 });
 
 Object.assign(window, { Alpine: alpine }).Alpine.start();
 
